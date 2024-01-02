@@ -35,7 +35,7 @@ const MainSlider = () => {
         pagination={{
           el: `.${styles.mainSlider__pagination}`,
           clickable: true,
-          renderBullet: (index, className) => {
+          renderBullet: (className) => {
             return `<span class="${className}"></span>`;
           },
         }}
@@ -86,7 +86,7 @@ const MainSlider = () => {
       <div className={styles.mainSlider__navigation}>
         <button type="button" className={styles.mainSlider__buttonPrev}>
           <svg width="13" height="21" viewBox="0 0 13 21" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fillRule="evenodd" clippule="evenodd" d="M2.5107 11.831L10.7569 20.0771L12.4929 18.3411L4.24673 10.0949L12.4928 1.84883L10.7568 0.112797L0.774645 10.095L2.51067 11.831L2.5107 11.831Z" />
+            <path fillRule="evenodd" clipRule="evenodd" d="M2.5107 11.831L10.7569 20.0771L12.4929 18.3411L4.24673 10.0949L12.4928 1.84883L10.7568 0.112797L0.774645 10.095L2.51067 11.831L2.5107 11.831Z" />
           </svg>
         </button>
         <div className={styles.mainSlider__pagination} />

@@ -10,7 +10,7 @@ const Intro = () => {
           <h2 className={styles.content}>
             Погрузитесь во вселенную <b>бесконечного</b> контента и каналов
           </h2>
-          <MainButton classAdd={styles.button} children="Начните бесплатно"></MainButton>
+          <MainButton type="button" classAdd={styles.button} children="Начните бесплатно"></MainButton>
         </div>
       </div>
     </section>
