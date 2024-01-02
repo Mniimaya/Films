@@ -1,0 +1,85 @@
+@import '../../scss/variables.scss';
+
+.footer {
+  background-color: #191919;
+  padding: 50px 0 30px;
+  margin-top: auto;
+}
+
+.footerContainer {
+  @include viewport--lg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.footerList {
+  display: flex;
+  flex-direction: column;
+
+  li {
+    border-bottom: 1px solid #262626;
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  li:first-of-type {
+    border-top: 1px solid #262626;
+  }
+
+  a {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: $color-white;
+
+    @include viewport--lg {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 25px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: $color-gray;
+      margin-left: 0;
+
+      &:hover {
+        transition: $anim;
+        color: $color-white;
+      }
+    }
+  }
+
+  @include viewport--lg {
+    flex-direction: row;
+    column-gap: 15px;
+
+    li,
+    li:first-of-type {
+      border: none;
+    }
+
+    li svg {
+      display: none;
+    }
+  }
+}
+
+.footerLogo {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 30px;
+
+  @include viewport--lg {
+    margin: 0;
+    svg {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

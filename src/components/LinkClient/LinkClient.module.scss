@@ -1,0 +1,51 @@
+@import '../../scss/variables.scss';
+
+.linkClient {
+  display: flex;
+  align-items: center;
+  color: $color-white;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  position: relative;
+
+  svg {
+    margin-right: 10px;
+  }
+}
+
+.client {
+  margin-top: 50px;
+
+  @include viewport--lg {
+    margin-top: 0;
+    margin-left: auto;
+
+    svg {
+      margin-right: 15px;
+    }
+
+    &:hover,
+    &:hover svg {
+      color: $color-pink;
+      @include trans;
+    }
+
+    &::after {
+      content: '';
+      width: 0;
+      height: 2px;
+      border-radius: 2px;
+      background-color: $color-pink;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    &:hover::after {
+      width: 100%;
+      @include trans;
+    }
+  }
+}

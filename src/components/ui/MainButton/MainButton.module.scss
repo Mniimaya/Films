@@ -1,0 +1,27 @@
+@import '../../../scss/variables.scss';
+
+.btn {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: $color-white;
+  padding: 10px 34px;
+  background-color: $color-pink;
+  min-height: 48px;
+  border-radius: 60px;
+  @include trans;
+
+  &:hover,
+  &:active {
+    transform: scale(1.05);
+    @include trans;
+  }
+
+  @include viewport--lg {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+}

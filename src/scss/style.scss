@@ -1,0 +1,288 @@
+@import './variables.scss';
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/Rubik-Bold.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../assets/fonts/Rubik-Medium.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/Rubik-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/Ubuntu-Bold.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../assets/fonts/Ubuntu-Light.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../assets/fonts/Ubuntu-Medium.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/Ubuntu-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+html,
+body {
+  color: $color-white;
+  font-family: $font-main;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 130%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+body {
+  background-image: url('../assets/img/background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main-additional {
+  background: url('../assets/img/background-logo.png') bottom -110px left -89px/805px 740px no-repeat, url('../assets/background.png') center/100% 100% no-repeat;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include viewport--lg {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 1240px;
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 1400px;
+  }
+
+  @include viewport--xl {
+    max-width: 1700px;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+header {
+  position: relative;
+  z-index: 3;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+main {
+  flex-grow: 1;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+svg {
+  pointer-events: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+.lineHover {
+  @include viewport--lg {
+    margin-top: 0;
+    margin-left: 15px;
+
+    &:hover,
+    &:hover svg {
+      color: $color-pink;
+      @include trans;
+    }
+
+    &::after {
+      content: '';
+      width: 0;
+      height: 2px;
+      border-radius: 2px;
+      background-color: $color-pink;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+
+    &:hover::after {
+      width: 100%;
+      @include trans;
+    }
+  }
+
+  svg {
+    margin-right: 8px;
+  }
+}
+
+.rating-card {
+  position: absolute;
+  padding: 3px;
+  top: 3px;
+  right: 3px;
+  border-radius: 7px;
+  color: $color-white;
+  font-size: 14px;
+  font-family: $font-additional;
+  line-height: 1;
+}
+
+.rating-card.rating-good {
+  background-color: $color-green;
+}
+
+.rating-card.rating-bad {
+  background-color: $color-red;
+}

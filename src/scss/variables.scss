@@ -1,0 +1,46 @@
+$color-background: #0e0d16;
+$color-white: #ffffff;
+$color-pink: #e13c52;
+$color-gray: #797979;
+$color-green: #3bb33b;
+$color-red: #ff0000;
+
+$button-hover: rgba(225, 60, 82, 0.926);
+
+$anim: all 0.5s ease;
+
+$font-main: 'Ubuntu', 'Aria', sans-serif;
+$font-additional: 'Rubik', 'Aria', sans-serif;
+
+$sm: 480px;
+$md: 768px;
+$lg: 1280px;
+$xl: 1920px;
+
+@mixin trans {
+  transition: all 0.3s ease;
+}
+
+@mixin viewport--sm {
+  @media (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin viewport--md {
+  @media (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin viewport--lg {
+  @media (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin viewport--xl {
+  @media (min-width: $xl) {
+    @content;
+  }
+}
