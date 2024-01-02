@@ -291,9 +291,9 @@ export enum ENUM_PAGE {
   'movie' = 'film',
 }
 
-export enum ButtonTypes [
+export enum ButtonTypes {
   'button',
   'submit',
   'reset',
   undefined,
-]
+}
