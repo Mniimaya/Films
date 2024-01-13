@@ -18,11 +18,10 @@ export const getFilms = async (lists: string) => {
 export const getFilmById = async (id: number) => {
   try {
     const response = await axios({
-      url: 'https://api.kinopoisk.dev/v1.4/movie',
+      url: `https://api.kinopoisk.dev/v1.4/movie/${id}`,
       method: 'GET',
-      params: { id: id },
     });
-    return response.data.docs[0];
+    return response.data;
   } catch (error) {
     console.log(error);
   }

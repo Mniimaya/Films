@@ -286,8 +286,8 @@ export interface I_ImagesInfo {
 }
 
 export enum ENUM_PAGE {
-  'animated-series' = 'serial',
-  'tv-series' = 'serial',
+  'animated-series' = 'series',
+  'tv-series' = 'series',
   'movie' = 'film',
 }
 

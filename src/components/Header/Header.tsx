@@ -25,7 +25,7 @@ function Header() {
                 <NavLink to="films">Фильмы</NavLink>
               </li>
               <li>
-                <NavLink to="serials">Сериалы</NavLink>
+                <NavLink to="series">Сериалы</NavLink>
               </li>
               <li>
                 <NavLink to="">Мультфильмы</NavLink>
