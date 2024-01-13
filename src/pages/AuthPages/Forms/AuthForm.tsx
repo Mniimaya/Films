@@ -11,7 +11,7 @@ const AuthForm = () => {
           <LabelInput type="password" placeholder="Пароль" />
         </fieldset>
         <MainButton classAdd={styles.submit} type="submit" children="Войти" />
-        <NavLink to="/registration" className={styles.link}>
+        <NavLink to="/auth/registaration" className={styles.link}>
           Ещё не зарегистрированы?
         </NavLink>
       </form>
