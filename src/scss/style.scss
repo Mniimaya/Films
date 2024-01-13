@@ -69,7 +69,6 @@ body {
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
   width: 100%;
-  height: 100%;
 }
 
 body {
@@ -84,15 +83,9 @@ main {
   height: 100%;
 }
 
-html,
-body {
-  height: 100vh;
-}
-
 #root {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
 }
 
 .main-additional {
