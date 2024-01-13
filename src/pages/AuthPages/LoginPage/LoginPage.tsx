@@ -4,7 +4,7 @@ import Logo from '../Logo';
 
 const LoginPage = () => {
   return (
-    <div className={`container ${styles.container}`}>
+    <div className={`${styles.container}`}>
       <Logo />
       <AuthForm />
     </div>
