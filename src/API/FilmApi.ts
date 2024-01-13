@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.headers.common['X-API-KEY'] = 'G9E6V8E-0ZNM8MT-G0X1N07-87NNTF7';
+axios.defaults.headers.common['X-API-KEY'] = '9D0FG1N-TFDMD98-H6PWA8T-0F2CZ09';
 
 export const getFilms = async (lists: string) => {
   try {
