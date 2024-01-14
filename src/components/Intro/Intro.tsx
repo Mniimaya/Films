@@ -1,4 +1,4 @@
-import MainButton from '../ui/MainButton/MainButton';
+import Button from '../ui/Button/Button';
 import MainSlider from '../MainSlider/MainSlider';
 import styles from './Intro.module.scss';
 const Intro = () => {
@@ -10,7 +10,9 @@ const Intro = () => {
           <h2 className={styles.content}>
             Погрузитесь во вселенную <b>бесконечного</b> контента и каналов
           </h2>
-          <MainButton type="button" classAdd={styles.button} children="Начните бесплатно"></MainButton>
+          <Button type="button" classAdd={styles.button}>
+            Начните бесплатно
+          </Button>
         </div>
       </div>
     </section>

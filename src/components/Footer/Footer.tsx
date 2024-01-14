@@ -1,6 +1,6 @@
 import LinkClient from '../LinkClient/LinkClient';
 import styles from './Footer.module.scss';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import LogoFooter from './LogoFooter';
 
 const Footer = () => {
@@ -12,16 +12,16 @@ const Footer = () => {
             <LinkClient />
           </li>
           <li>
-            <NavLink to="films">Фильмы</NavLink>
+            <Link to="films">Фильмы</Link>
           </li>
           <li>
-            <NavLink to="films">Сериалы</NavLink>
+            <Link to="films">Сериалы</Link>
           </li>
           <li>
-            <NavLink to="films">Мультфильмы</NavLink>
+            <Link to="films">Мультфильмы</Link>
           </li>
           <li>
-            <NavLink to="films">Весь каталог</NavLink>
+            <Link to="films">Весь каталог</Link>
           </li>
         </ul>
         <LogoFooter />

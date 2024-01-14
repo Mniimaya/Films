@@ -190,6 +190,7 @@
 }
 
 .search {
+  position: relative;
   order: -1;
   margin-bottom: 25px;
 
@@ -225,6 +226,13 @@
       margin-right: 8px;
     }
   }
+}
+
+.inputSearch::-webkit-search-decoration,
+.inputSearch::-webkit-search-cancel-button,
+.inputSearch::-webkit-search-results-button,
+.inputSearch::-webkit-search-results-decoration {
+  display: none;
 }
 
 :global(.navigation li .active) {

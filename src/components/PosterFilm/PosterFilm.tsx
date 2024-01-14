@@ -1,15 +1,12 @@
 import React from 'react';
 import styles from './PosterFilm.module.scss';
-import MainButton from '../ui/MainButton/MainButton';
+import Button from '../ui/Button/Button';
 import { ICountry, IGenre, IRootFilm } from '../../TYPES/TYPES';
 
 const PosterFilm = (props: IRootFilm) => {
   const renderArray = (array: ICountry[] | IGenre[]) => {
     if (array.length > 0) {
-      const filterArray = array.map((item) => {
-        return item.name;
-      });
-
+      const filterArray = array.map((item) => item.name);
       return filterArray.join(', ');
     }
   };
@@ -42,7 +39,9 @@ const PosterFilm = (props: IRootFilm) => {
           {isOpenDescription ? 'Скрыть' : 'Показать всё'}
         </button>
 
-        <MainButton classAdd={styles.buttonWatch} type="submit" children="Смотреть сейчас" />
+        <Button classAdd={styles.buttonWatch} type="submit">
+          Смотреть сейчас
+        </Button>
       </div>
     </div>
   );

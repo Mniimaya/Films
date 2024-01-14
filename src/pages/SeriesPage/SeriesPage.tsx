@@ -24,12 +24,10 @@ const SeriesPage = () => {
     requestsFilm();
   }, [params.seriesId]);
 
-  console.log(series?.persons);
-
   return (
     <>
-      {series ? <PosterSeries {...series} /> : ''}
-      <div className="container">{series?.persons ? <Actors persons={series?.persons} /> : ''}</div>
+      {series && <PosterSeries {...series} />}
+      {series?.persons && <Actors persons={series?.persons} />}
     </>
   );
 };

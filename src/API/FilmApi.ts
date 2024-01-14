@@ -26,3 +26,16 @@ export const getFilmById = async (id: number) => {
     console.log(error);
   }
 };
+
+export const searchData = async (query: string) => {
+  try {
+    const response = await axios({
+      url: `https://api.kinopoisk.dev/v1.4/movie/search`,
+      params: { page: 1, limit: 10, query },
+      method: 'GET',
+    });
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};

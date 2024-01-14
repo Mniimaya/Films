@@ -23,12 +23,7 @@ const FilmPage = () => {
     requestsFilm();
   }, [params.filmId]);
 
-  return (
-    <>
-      {film ? <PosterFilm {...film} /> : ''}
-      <div className="container"></div>
-    </>
-  );
+  return <>{film && <PosterFilm {...film} />}</>;
 };
 
 export default FilmPage;

@@ -1,19 +1,25 @@
-import LabelInput from '../../../components/ui/Label/LabelInput';
-import MainButton from '../../../components/ui/MainButton/MainButton';
+import Input from '../../../components/ui/Input/Input';
+import Button from '../../../components/ui/Button/Button';
 import styles from './forms.module.scss';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 const AuthForm = () => {
   return (
     <div className={styles.formContainer}>
       <form>
         <fieldset>
-          <LabelInput type="email" placeholder="Email" />
-          <LabelInput type="password" placeholder="Пароль" />
+          <label>
+            <Input type="email" placeholder="Email" />
+          </label>
+          <label>
+            <Input type="password" placeholder="Пароль" />
+          </label>
         </fieldset>
-        <MainButton classAdd={styles.submit} type="submit" children="Войти" />
-        <NavLink to="/auth/registaration" className={styles.link}>
+        <Button onClick={() => console.log(123)} classAdd={styles.submit} type="submit">
+          Войти
+        </Button>
+        <Link to="/auth/registaration" className={styles.link}>
           Ещё не зарегистрированы?
-        </NavLink>
+        </Link>
       </form>
     </div>
   );

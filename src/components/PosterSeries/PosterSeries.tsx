@@ -2,7 +2,7 @@ import React from 'react';
 import { ICountry, IGenre, IRootFilm } from '../../TYPES/TYPES';
 
 import styles from './PosterSeries.module.scss';
-import MainButton from '../ui/MainButton/MainButton';
+import Button from '../ui/Button/Button';
 
 const PosterSeries = (props: IRootFilm) => {
   const renderArray = (array: ICountry[] | IGenre[]) => {
@@ -43,7 +43,9 @@ const PosterSeries = (props: IRootFilm) => {
           {isOpenDescription ? 'Скрыть' : 'Показать всё'}
         </button>
 
-        <MainButton classAdd={styles.buttonWatch} type="submit" children="Смотреть трейлер" />
+        <Button classAdd={styles.buttonWatch} type="submit">
+          Смотреть трейлер
+        </Button>
       </div>
     </div>
   );

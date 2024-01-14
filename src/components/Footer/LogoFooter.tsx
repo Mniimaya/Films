@@ -1,9 +1,9 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './Footer.module.scss';
 
 const LogoFooter = () => {
   return (
-    <NavLink to="/" className={styles.footerLogo}>
+    <Link to="/" className={styles.footerLogo}>
       <svg width="139" height="117" viewBox="0 0 139 117" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M90.7115 117C141.341 57.4364 82.4317 53.1818 69.6158 53.1818C56.7999 53.1818 0 55.4689 0 42.5455C67.5062 53.1954 20.9372 0 33.7531 0C46.569 0 221.505 12.7637 90.7115 117Z" fill="white" />
         <path
@@ -18,7 +18,7 @@ const LogoFooter = () => {
           </linearGradient>
         </defs>
       </svg>
-    </NavLink>
+    </Link>
   );
 };
 
