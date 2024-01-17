@@ -49,11 +49,11 @@ export interface IRootFilm {
 }
 
 export interface IFilterMovie {
-  docs: IRootFilm[];
-  total: number;
-  limit: number;
-  page: number;
-  pages: number;
+  docs?: IRootFilm[];
+  total?: number;
+  limit?: number;
+  page?: number;
+  pages?: number;
 }
 
 export interface IExternalId {

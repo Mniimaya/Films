@@ -4,17 +4,22 @@ import styles from './Header.module.scss';
 import LinkClient from '../LinkClient/LinkClient';
 import Logo from './Logo';
 import Search from './Search/Search';
+import { toggle } from '../../store/slises/headerSlice';
+import { handlerSearch } from '../../store/slises/searchSlice';
+import { useAppDispatch, useAppSelector } from '../../hooks/hookRedux';
 
 function Header() {
   const location = useLocation();
   const path = location.pathname;
-  const [isOpen, setIsOpen] = React.useState(false);
-
+  const isOpen = useAppSelector((state) => state.header.isOpen);
+  const dispatch = useAppDispatch();
   const handlerMobileMenu = () => {
-    setIsOpen(!isOpen);
+    dispatch(toggle(!isOpen));
+    dispatch(handlerSearch(false));
   };
+
   return (
-    <header className={`${styles.header} ${path !== '/' ? styles.headerOpacity : ''}`}>
+    <header className={`${styles.header} ${isOpen && styles.headerDark} ${path !== '/' && styles.headerOpacity}`}>
       <div className={`container ${styles.container}`}>
         <Link to="/" className={styles.logoLink}>
           <Logo></Logo>

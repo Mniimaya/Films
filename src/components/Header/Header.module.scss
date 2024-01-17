@@ -4,10 +4,16 @@
   background: rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 3;
+  transition: $anim;
 }
 
 .headerOpacity {
   background: transparent;
+}
+
+.headerDark {
+  background: rgba(0, 0, 0, 0.9);
+  transition: $anim;
 }
 
 .container {
@@ -135,6 +141,7 @@
     align-items: center;
     width: 100%;
     padding: 0;
+    overflow: visible;
   }
 }
 

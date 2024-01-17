@@ -3,26 +3,51 @@ import styles from '../Header.module.scss';
 import { searchData } from '../../../API/FilmApi';
 import debounce from 'lodash.debounce';
 import SearchList from './SearchList';
-import { IFilterMovie } from '../../../TYPES/TYPES';
+import { useAppDispatch, useAppSelector } from '../../../hooks/hookRedux';
+import { handlerSearch, updateData, updateValue } from '../../../store/slises/searchSlice';
+
+type PopupClick = MouseEvent & {
+  path: Node[];
+};
 
 const Search = () => {
-  const [value, setValue] = React.useState('');
-  const [searchValue, setSearchValue] = React.useState<IFilterMovie>();
+  const value = useAppSelector((state) => state.search.value);
+  const searchValue = useAppSelector((state) => state.search.searchValue);
+  const isOpen = useAppSelector((state) => state.search.isOpen);
+  const dispatch = useAppDispatch();
 
   const search = React.useCallback(
     debounce((value: string) => {
-      searchData(value).then((data) => setSearchValue(data));
+      searchData(value).then((data) => {
+        dispatch(updateData(data));
+        dispatch(handlerSearch(true));
+      });
     }, 1000),
     []
   );
 
   const updateSearchValue = (evt: ChangeEvent) => {
-    setValue((evt.target as any).value);
+    dispatch(updateValue((evt.target as HTMLInputElement).value));
     search((evt.target as any).value);
   };
 
+  const sortRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const _event = event as PopupClick;
+      if (sortRef.current && _event.target !== sortRef.current) {
+        dispatch(handlerSearch(false));
+      }
+    };
+
+    document.body.addEventListener('click', handleClickOutside);
+
+    return () => document.body.removeEventListener('click', handleClickOutside);
+  }, []);
+
   return (
-    <div className={styles.search}>
+    <div className={styles.search} ref={sortRef}>
       <label>
         <button type="button">
           <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +61,8 @@ const Search = () => {
         </button>
         <input className={styles.inputSearch} value={value} onChange={(evt) => updateSearchValue(evt)} type="search" placeholder="Поиск" />
       </label>
-      {searchValue && <SearchList data={searchValue} />}
+
+      {isOpen && <SearchList data={searchValue} />}
     </div>
   );
 };
