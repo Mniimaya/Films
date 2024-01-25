@@ -2,8 +2,6 @@ import React from 'react';
 import styles from './PosterFilm.module.scss';
 import Button from '../ui/Button/Button';
 import { ICountry, IGenre, IRootFilm } from '../../TYPES/TYPES';
-import Modal from '../Modal/Modal';
-import Trailer from '../Trailer/Trailer';
 
 const PosterFilm = (props: IRootFilm) => {
   const renderArray = (array: ICountry[] | IGenre[]) => {
@@ -37,7 +35,6 @@ const PosterFilm = (props: IRootFilm) => {
           </Button>
         )}
       </div>
-      {/* <Modal Component={() => <Trailer url={props.videos.trailers.} />}></Modal> */}
     </div>
   );
 };

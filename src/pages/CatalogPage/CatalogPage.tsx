@@ -10,10 +10,11 @@ type TYPE_PARAMS = {
 const CatalogPage = () => {
   const params = useParams<TYPE_PARAMS>();
   const catalogId = params.catalogId as keyof I_DATA_CATALOG;
+  console.log(catalogId);
   return (
     <>
       <div className="container">
-        {/* <h1 className={styles.title}>{dataCatalog[catalogId].title}</h1> */}
+        <h1 className={styles.title}>{dataCatalog.films.title}</h1>
         <Filter />
         <ul>
           <li>

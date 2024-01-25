@@ -1,4 +1,3 @@
-import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/hookRedux';
 import styles from './Trailer.module.scss';
 import ReactPlayer from 'react-player/youtube';
