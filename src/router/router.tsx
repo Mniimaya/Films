@@ -21,7 +21,7 @@ export const Router = createBrowserRouter([
         element: <FilmPage />,
       },
       {
-        path: 'catalog',
+        path: 'catalog/:catalogId',
         element: <CatalogPage />,
       },
     ],

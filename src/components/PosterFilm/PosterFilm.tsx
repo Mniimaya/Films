@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './PosterFilm.module.scss';
 import Button from '../ui/Button/Button';
 import { ICountry, IGenre, IRootFilm } from '../../TYPES/TYPES';
+import Modal from '../Modal/Modal';
+import Trailer from '../Trailer/Trailer';
 
 const PosterFilm = (props: IRootFilm) => {
   const renderArray = (array: ICountry[] | IGenre[]) => {
@@ -24,15 +26,18 @@ const PosterFilm = (props: IRootFilm) => {
           <span>Производство: {renderArray(props.countries)}</span>
           <span>Жанр: {renderArray(props.genres)}</span>
           <span>Год выпуска: {props.year} г.</span>
-          {props.movieLength ? <span>Время: {props.movieLength} мин.</span> : ''}
-          {props.ageRating && <span className={styles.age}>{props.ageRating}+</span>}
+          {!!props.movieLength ? <span>Время: {props.movieLength} мин.</span> : ''}
+          {!!props.ageRating && <span className={styles.age}>{props.ageRating}+</span>}
         </p>
         <p className={styles.description}>{props.description}</p>
 
-        <Button classAdd={styles.buttonWatch} type="submit">
-          Смотреть сейчас
-        </Button>
+        {!!props.videos.trailers.length && (
+          <Button classAdd={styles.buttonWatch} type="submit">
+            Смотреть трейлер
+          </Button>
+        )}
       </div>
+      {/* <Modal Component={() => <Trailer url={props.videos.trailers.} />}></Modal> */}
     </div>
   );
 };
