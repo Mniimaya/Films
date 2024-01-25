@@ -20,9 +20,6 @@ const Footer = () => {
           <li>
             <Link to="films">Мультфильмы</Link>
           </li>
-          <li>
-            <Link to="films">Весь каталог</Link>
-          </li>
         </ul>
         <LogoFooter />
       </div>

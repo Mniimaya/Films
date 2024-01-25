@@ -64,6 +64,7 @@
   position: relative;
   z-index: 2;
   margin-top: auto;
+  justify-content: center;
 }
 
 .mainSlider__buttonPrev,
@@ -78,6 +79,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &:disabled {
+    color: rgba(217, 217, 217, 0.3);
+    border-color: rgba(217, 217, 217, 0.3);
+  }
 }
 
 .mainSlider__buttonPrev {
@@ -100,14 +106,12 @@
   height: auto;
   align-self: center;
   justify-content: center;
-  :global {
-    .swiper-pagination-bullet {
-      width: 20px;
-      height: 4px;
-      background-color: #d9d9d9;
-      display: block;
-      border-radius: 0;
-    }
+  span {
+    width: 20px;
+    height: 4px;
+    background-color: rgba(217, 217, 217, 0.7);
+    display: block;
+    border-radius: 0;
   }
 }
 
@@ -125,18 +129,20 @@
 .mainSlide {
   flex-shrink: 0;
   position: relative;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 200px;
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
 
   @include viewport--md {
-    width: 385px;
+    max-width: 385px;
     height: 355px;
   }
 
   @include viewport--lg {
+    max-width: none;
     width: 100%;
     height: 680px;
     border-radius: 0;
@@ -161,7 +167,7 @@
     left: 10px;
     bottom: 10px;
     position: absolute;
-    z-index: 1;
+    z-index: 5;
     background-repeat: no-repeat;
 
     @include viewport--md {

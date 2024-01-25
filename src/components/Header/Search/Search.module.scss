@@ -9,12 +9,13 @@
   right: 20px;
   bottom: 20px;
   z-index: 10;
+  overflow: hidden;
   &::-webkit-scrollbar {
     width: 0;
   }
 
   @include viewport--lg {
-    width: 270px;
+    width: 100%;
     min-height: 70px;
     max-height: 80vh;
     top: calc(100% + 6px);
@@ -25,24 +26,36 @@
   }
 }
 
+.noDataContainer {
+  background: rgba(14, 13, 22, 0.9);
+
+  @include viewport--lg {
+    background: #232229;
+  }
+}
+
 .innerContainer {
-  height: max-content;
   overflow: auto;
-  min-height: 70px;
-  max-height: 80vh;
-  top: calc(100% + 6px);
-  &::-webkit-scrollbar {
-    width: 5px;
-    height: calc(100% - 10px);
-  }
-  &::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 5px 0;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: blue; /* цвет плашки */
-    border-radius: 20px; /* закругления плашки */
-    border: 3px solid $color-pink; /* padding вокруг плашки */
+  max-height: 100%;
+  @include viewport--lg {
+    height: max-content;
+    overflow: auto;
+    min-height: 70px;
+    max-height: 80vh;
+    top: calc(100% + 6px);
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: calc(100% - 10px);
+    }
+    &::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 5px 0;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: blue; /* цвет плашки */
+      border-radius: 20px; /* закругления плашки */
+      border: 3px solid $color-pink; /* padding вокруг плашки */
+    }
   }
 }
 
@@ -132,9 +145,75 @@
   }
 }
 .noData {
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 16px;
+  background: #232229;
+  margin: -10px -9px 0;
+  border-radius: 20px;
+  height: 60px;
+
+  @include viewport--lg {
+    margin: 0;
+    background: transparent;
+    border-radius: 0;
+  }
+}
+
+.resetButton {
+  margin-left: 10px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.inputSearch::-webkit-search-decoration,
+.inputSearch::-webkit-search-cancel-button,
+.inputSearch::-webkit-search-results-button,
+.inputSearch::-webkit-search-results-decoration {
+  display: none;
+}
+
+.search {
+  position: relative;
+  order: -1;
+  margin-bottom: 25px;
+
+  @include viewport--lg {
+    order: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+  }
+
+  label {
+    border-radius: 13px;
+    background: #232229;
+    height: 48px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    position: relative;
+
+    input {
+      background-color: transparent;
+      width: 100%;
+      color: $color-white;
+      font-size: 16px;
+      padding-right: 30px;
+    }
+
+    input::placeholder {
+      color: #4e4c5e;
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    button {
+      background-color: transparent;
+      margin-right: 8px;
+    }
+  }
 }

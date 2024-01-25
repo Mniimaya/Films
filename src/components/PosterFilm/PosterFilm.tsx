@@ -11,7 +11,6 @@ const PosterFilm = (props: IRootFilm) => {
     }
   };
 
-  const [isOpenDescription, setIsOpenDescription] = React.useState(false);
   return (
     <div className={styles.wrapper}>
       <div className={styles.imageWrapper}>
@@ -25,19 +24,10 @@ const PosterFilm = (props: IRootFilm) => {
           <span>Производство: {renderArray(props.countries)}</span>
           <span>Жанр: {renderArray(props.genres)}</span>
           <span>Год выпуска: {props.year} г.</span>
-          <span>Время: {props.movieLength} мин.</span>
-          <span className={styles.age}>{props.ageRating}+</span>
+          {props.movieLength ? <span>Время: {props.movieLength} мин.</span> : ''}
+          {props.ageRating && <span className={styles.age}>{props.ageRating}+</span>}
         </p>
-        <p className={`${styles.description} ${isOpenDescription ? 'active' : ''}`}>{props.description}</p>
-        <button
-          type="button"
-          className={styles.buttonOpenDesc}
-          onClick={() => {
-            setIsOpenDescription(!isOpenDescription);
-          }}
-        >
-          {isOpenDescription ? 'Скрыть' : 'Показать всё'}
-        </button>
+        <p className={styles.description}>{props.description}</p>
 
         <Button classAdd={styles.buttonWatch} type="submit">
           Смотреть сейчас

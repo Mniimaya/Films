@@ -13,8 +13,9 @@ const SearchList = ({ data }: props) => {
   const handlerResetSearch = () => {
     dispatch(updateValue(''));
   };
+
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${!!!data?.docs.length && styles.noDataContainer}`}>
       <div className={styles.innerContainer}>
         <ul className={styles.list}>{data?.docs.length ? data.docs.map((item, i) => <SearchItem onClick={handlerResetSearch} data={item} key={i} />) : <li className={styles.noData}>Ничего не найдено</li>}</ul>
       </div>

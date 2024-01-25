@@ -26,7 +26,7 @@
 
   @include viewport--lg {
     height: 100%;
-    max-height: 600px;
+    max-height: 640px;
     max-width: 999px;
     width: 100%;
   }
@@ -97,33 +97,19 @@
 }
 
 .description {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 300;
-  line-height: 15px;
-  letter-spacing: 0em;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
-
+  line-height: 1.2;
   @include viewport--md {
     display: block;
     font-size: 16px;
     line-height: 21px;
     max-width: 770px;
+    text-align: justify;
   }
 
   &:global(.active) {
     display: block;
-  }
-}
-
-.buttonOpenDesc {
-  background-color: transparent;
-  color: $color-pink;
-  margin-top: 15px;
-  @include viewport--md {
-    display: none;
   }
 }
 
@@ -139,7 +125,7 @@
 }
 
 .wrapper {
-  padding-bottom: 70px;
+  padding-bottom: 20px;
 
   @include viewport--md {
     padding: 0 20px 70px 20px;

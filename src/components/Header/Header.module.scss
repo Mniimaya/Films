@@ -9,6 +9,10 @@
 
 .headerOpacity {
   background: transparent;
+
+  @include viewport--lg {
+    background: rgba(0, 0, 0, 0.9);
+  }
 }
 
 .headerDark {
@@ -194,52 +198,6 @@
       @include trans;
     }
   }
-}
-
-.search {
-  position: relative;
-  order: -1;
-  margin-bottom: 25px;
-
-  @include viewport--lg {
-    order: 0;
-    margin-bottom: 0;
-  }
-
-  label {
-    border-radius: 13px;
-    background: #232229;
-    height: 48px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 12px;
-
-    input {
-      background-color: transparent;
-      width: 100%;
-      color: $color-white;
-      font-size: 16px;
-    }
-
-    input::placeholder {
-      color: #4e4c5e;
-      font-size: 20px;
-      font-weight: 400;
-    }
-
-    button {
-      background-color: transparent;
-      margin-right: 8px;
-    }
-  }
-}
-
-.inputSearch::-webkit-search-decoration,
-.inputSearch::-webkit-search-cancel-button,
-.inputSearch::-webkit-search-results-button,
-.inputSearch::-webkit-search-results-decoration {
-  display: none;
 }
 
 :global(.navigation li .active) {

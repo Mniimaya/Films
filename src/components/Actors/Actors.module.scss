@@ -1,3 +1,11 @@
+.title {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+
 .imgWrapper {
   width: 133px;
   height: 205px;
@@ -18,11 +26,6 @@
 .slide {
   width: 133px;
   flex-shrink: 0;
-}
-
-.container {
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 
 .name {

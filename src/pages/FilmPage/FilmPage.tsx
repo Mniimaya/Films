@@ -1,8 +1,11 @@
 import React from 'react';
+import styles from './FilmPage.module.scss';
 import PosterFilm from '../../components/PosterFilm/PosterFilm';
 import { getFilmById } from '../../API/FilmApi';
 import { useParams } from 'react-router-dom';
 import { IRootFilm } from '../../TYPES/TYPES';
+import Actors from '../../components/Actors/Actors';
+import SimilarMovies from '../../components/SimilarMovies/SimilarMovies';
 
 type TYPE_PARAMS = {
   filmId: string;
@@ -23,7 +26,13 @@ const FilmPage = () => {
     requestsFilm();
   }, [params.filmId]);
 
-  return <>{film && <PosterFilm {...film} />}</>;
+  return (
+    <>
+      {film && <PosterFilm {...film} />}
+      <div className={styles.container}>{film?.persons && <Actors persons={film?.persons} />}</div>
+      <div className={styles.container}>{film?.similarMovies.length && <SimilarMovies data={film.similarMovies} />}</div>
+    </>
+  );
 };
 
 export default FilmPage;

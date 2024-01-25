@@ -35,11 +35,11 @@ const MainSlider = () => {
         pagination={{
           el: `.${styles.mainSlider__pagination}`,
           clickable: true,
-          renderBullet: (className) => {
+          renderBullet: (index, className) => {
             return `<span class="${className}"></span>`;
           },
         }}
-        // scrollbar={{ draggable: true, el: ".mainSlide" }}
+        // scrollbar={{ draggable: true, el: '.mainSlide' }}
         breakpoints={{
           1280: {
             slidesPerView: 1,

@@ -6,11 +6,11 @@
 
 .containerTop {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: baseline;
   flex-wrap: wrap;
   gap: 7px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .title {
@@ -19,6 +19,10 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  &:hover {
+    color: $color-pink;
+    @include trans;
+  }
 }
 
 .linkAll {

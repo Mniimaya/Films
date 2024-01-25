@@ -5,7 +5,8 @@ import styles from './CategorySlider.module.scss';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
-import { ENUM_PAGE, IFilterMovie } from '../../TYPES/TYPES';
+import { IFilterMovie } from '../../TYPES/TYPES';
+import imgTemplate from '../../assets/img/film-template.png';
 
 interface props {
   data: IFilterMovie;
@@ -23,7 +24,9 @@ const CategorySlider = (props: props) => {
     <section className={styles.sectionSlider}>
       <div className="container">
         <div className={styles.containerTop}>
-          <h2 className={styles.title}>{props.title}</h2>
+          <Link to="/" className={styles.title}>
+            {props.title}
+          </Link>
           <Link to="/" className={styles.linkAll}>
             <span>Смотреть всё</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="17" viewBox="0 0 10 17" fill="currentColor">
@@ -37,14 +40,14 @@ const CategorySlider = (props: props) => {
             ? data.map((item, i) => {
                 return (
                   <SwiperSlide className={styles.slide} key={i}>
-                    <Link to={`${ENUM_PAGE[item.type as keyof typeof ENUM_PAGE]}/${item.id}`}>
+                    <Link to={`film/${item.id}`}>
                       <div className={styles.imgWrapper}>
-                        <img src={item.poster.previewUrl} />
+                        <img src={item.poster.previewUrl || imgTemplate} />
                       </div>
                       <span className={`rating-card ${getRatingClass(item.rating.kp)}`}>{String(item.rating.kp).slice(0, 3)}</span>
                     </Link>
                     <div className={styles.linkWrapper}>
-                      <Link to={`${ENUM_PAGE[item.type as keyof typeof ENUM_PAGE]}/${item.id}`} className={styles.linkTitle}>
+                      <Link to={`film/${item.id}`} className={styles.linkTitle}>
                         {item.name}
                       </Link>
                     </div>

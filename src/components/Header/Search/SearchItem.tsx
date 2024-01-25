@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { IRootFilm } from '../../../TYPES/TYPES';
 import styles from './Search.module.scss';
 import { ENUM_PAGE } from '../../../TYPES/TYPES';
+import imgFilm from '../../../assets/img/film-template.png';
 interface props {
   data: IRootFilm;
   onClick: Function;
@@ -19,7 +20,7 @@ const SearchItem = ({ data, onClick }: props) => {
     <li onClick={() => onClick()}>
       <Link className={styles.item} to={`${ENUM_PAGE[data.type as keyof typeof ENUM_PAGE]}/${data.id}`}>
         <div className={styles.preview}>
-          <img src={data.poster.previewUrl} />
+          <img src={data.poster.previewUrl || imgFilm} />
         </div>
         <div>
           <p className={styles.name}>{data.name}</p>

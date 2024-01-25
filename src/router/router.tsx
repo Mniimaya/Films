@@ -5,7 +5,6 @@ import FilmPage from '../pages/FilmPage/FilmPage';
 import RegistrationPage from '../pages/AuthPages/RegistrationPage/RegistrationPage';
 import AuthLayout from '../layouts/AuthLayout';
 import LoginPage from '../pages/AuthPages/LoginPage/LoginPage';
-import SeriesPage from '../pages/SeriesPage/SeriesPage';
 import CatalogPage from '../pages/CatalogPage/CatalogPage';
 
 export const Router = createBrowserRouter([
@@ -20,10 +19,6 @@ export const Router = createBrowserRouter([
       {
         path: 'film/:filmId',
         element: <FilmPage />,
-      },
-      {
-        path: 'series/:seriesId',
-        element: <SeriesPage />,
       },
       {
         path: 'catalog',

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styles from './Header.module.scss';
 import LinkClient from '../LinkClient/LinkClient';
 import Logo from './Logo';
@@ -28,16 +27,13 @@ function Header() {
           <nav className={`${styles.nav} navigation`}>
             <ul>
               <li>
-                <NavLink to="films">Фильмы</NavLink>
+                <Link to="catalog/films">Фильмы</Link>
               </li>
               <li>
-                <NavLink to="series">Сериалы</NavLink>
+                <Link to="catalog/series">Сериалы</Link>
               </li>
               <li>
-                <NavLink to="">Мультфильмы</NavLink>
-              </li>
-              <li>
-                <NavLink to="">Весь каталог</NavLink>
+                <Link to="catalog/mult">Мультфильмы</Link>
               </li>
             </ul>
           </nav>

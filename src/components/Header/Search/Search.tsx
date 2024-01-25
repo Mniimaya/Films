@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react';
-import styles from '../Header.module.scss';
+import styles from './Search.module.scss';
 import { searchData } from '../../../API/FilmApi';
 import debounce from 'lodash.debounce';
 import SearchList from './SearchList';
@@ -15,6 +15,8 @@ const Search = () => {
   const searchValue = useAppSelector((state) => state.search.searchData);
   const isOpen = useAppSelector((state) => state.search.isOpen);
   const dispatch = useAppDispatch();
+  const searchRef = React.useRef<HTMLDivElement>(null);
+  const inputRef = React.useRef<HTMLInputElement>(null);
 
   const search = React.useCallback(
     debounce((value: string) => {
@@ -31,8 +33,10 @@ const Search = () => {
     search((evt.target as any).value);
   };
 
-  const searchRef = React.useRef<HTMLDivElement>(null);
-  const inputRef = React.useRef<HTMLInputElement>(null);
+  const handlerClear = () => {
+    dispatch(handlerSearch(false));
+    dispatch(updateValue(''));
+  };
 
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -62,6 +66,13 @@ const Search = () => {
           </svg>
         </button>
         <input ref={inputRef} className={styles.inputSearch} value={value} onChange={(evt) => updateSearchValue(evt)} type="search" placeholder="Поиск" />
+        {value && (
+          <button type="button" className={styles.resetButton} onClick={() => handlerClear()}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+              <path d="M11.8493 1.94975L1.94976 11.8492M11.8493 11.8492L6.89951 6.89949L1.94976 1.94975" stroke="#454261" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
+        )}
       </label>
 
       {isOpen && <SearchList data={searchValue} />}
