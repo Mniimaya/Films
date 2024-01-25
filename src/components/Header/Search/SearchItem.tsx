@@ -4,16 +4,19 @@ import styles from './Search.module.scss';
 import { ENUM_PAGE } from '../../../TYPES/TYPES';
 interface props {
   data: IRootFilm;
+  onClick: Function;
 }
 
-const SearchItem = ({ data }: props) => {
+const SearchItem = ({ data, onClick }: props) => {
   const getRatingClass = (rating: number) => {
     return rating > 6 ? 'rating-good' : 'rating-bad';
   };
 
+  const rating = +String(data.rating.kp).slice(0, 3);
+
   const ratingClass = getRatingClass(data.rating.kp);
   return (
-    <li>
+    <li onClick={() => onClick()}>
       <Link className={styles.item} to={`${ENUM_PAGE[data.type as keyof typeof ENUM_PAGE]}/${data.id}`}>
         <div className={styles.preview}>
           <img src={data.poster.previewUrl} />
@@ -21,7 +24,7 @@ const SearchItem = ({ data }: props) => {
         <div>
           <p className={styles.name}>{data.name}</p>
           <div className={styles.ratingWrapper}>
-            <span className={`${styles.rating} ${ratingClass}`}>{String(data.rating.kp).slice(0, 3)}</span>
+            {!!rating && <span className={`${styles.rating} ${ratingClass}`}>{rating}</span>}
             <span className={styles.year}>{data.year}</span>
           </div>
         </div>

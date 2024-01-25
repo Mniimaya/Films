@@ -49,7 +49,7 @@ export interface IRootFilm {
 }
 
 export interface IFilterMovie {
-  docs?: IRootFilm[];
+  docs: IRootFilm[];
   total?: number;
   limit?: number;
   page?: number;
@@ -296,4 +296,9 @@ export enum ButtonTypes {
   'submit',
   'reset',
   undefined,
+}
+
+export interface optionCusomSelect {
+  value: string;
+  label: string;
 }

@@ -9,26 +9,31 @@
   right: 20px;
   bottom: 20px;
   z-index: 10;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 
   @include viewport--lg {
     width: 270px;
-    height: 80vh;
+    min-height: 70px;
+    max-height: 80vh;
     top: calc(100% + 6px);
     left: 0;
     position: absolute;
+    height: max-content;
+    overflow: auto;
   }
 }
 
-.list {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  row-gap: 20px;
+.innerContainer {
+  height: max-content;
   overflow: auto;
-  height: 100%;
-
+  min-height: 70px;
+  max-height: 80vh;
+  top: calc(100% + 6px);
   &::-webkit-scrollbar {
     width: 5px;
+    height: calc(100% - 10px);
   }
   &::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.3);
@@ -39,6 +44,15 @@
     border-radius: 20px; /* закругления плашки */
     border: 3px solid $color-pink; /* padding вокруг плашки */
   }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  row-gap: 20px;
+  overflow: auto;
+  height: max-content;
 }
 
 .item {
@@ -93,6 +107,8 @@
   font-size: 14px;
   line-height: 1;
   margin-right: 5px;
+  min-width: 27px;
+  text-align: center;
 
   @include viewport--sm {
     font-size: 16px;
@@ -114,4 +130,11 @@
   @include viewport--sm {
     font-size: 16px;
   }
+}
+.noData {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
 }

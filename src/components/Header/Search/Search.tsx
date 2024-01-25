@@ -12,7 +12,7 @@ type PopupClick = MouseEvent & {
 
 const Search = () => {
   const value = useAppSelector((state) => state.search.value);
-  const searchValue = useAppSelector((state) => state.search.searchValue);
+  const searchValue = useAppSelector((state) => state.search.searchData);
   const isOpen = useAppSelector((state) => state.search.isOpen);
   const dispatch = useAppDispatch();
 
@@ -31,13 +31,15 @@ const Search = () => {
     search((evt.target as any).value);
   };
 
-  const sortRef = React.useRef<HTMLDivElement>(null);
+  const searchRef = React.useRef<HTMLDivElement>(null);
+  const inputRef = React.useRef<HTMLInputElement>(null);
 
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const _event = event as PopupClick;
-      if (sortRef.current && _event.target !== sortRef.current) {
+      if (searchRef.current && inputRef.current && _event.target !== searchRef.current && _event.target !== inputRef.current) {
         dispatch(handlerSearch(false));
+        dispatch(updateValue(''));
       }
     };
 
@@ -47,7 +49,7 @@ const Search = () => {
   }, []);
 
   return (
-    <div className={styles.search} ref={sortRef}>
+    <div className={styles.search} ref={searchRef}>
       <label>
         <button type="button">
           <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -59,7 +61,7 @@ const Search = () => {
             />
           </svg>
         </button>
-        <input className={styles.inputSearch} value={value} onChange={(evt) => updateSearchValue(evt)} type="search" placeholder="Поиск" />
+        <input ref={inputRef} className={styles.inputSearch} value={value} onChange={(evt) => updateSearchValue(evt)} type="search" placeholder="Поиск" />
       </label>
 
       {isOpen && <SearchList data={searchValue} />}

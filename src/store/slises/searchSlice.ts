@@ -3,13 +3,13 @@ import { createSlice } from '@reduxjs/toolkit/react';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 export interface SearchState {
-  searchValue: IFilterMovie;
+  searchData: IFilterMovie | null;
   isOpen: boolean;
   value: string;
 }
 
 const initialState: SearchState = {
-  searchValue: {},
+  searchData: null,
   isOpen: false,
   value: '',
 };
@@ -19,7 +19,7 @@ const searchSlice = createSlice({
   initialState,
   reducers: {
     updateData: (state, action: PayloadAction<IFilterMovie>) => {
-      state.searchValue = action.payload;
+      state.searchData = action.payload;
     },
     toggleSearch: (state, action: PayloadAction<boolean>) => {
       state.isOpen = !action.payload;
