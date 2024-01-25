@@ -1,6 +1,5 @@
 import { useAppDispatch, useAppSelector } from '../../../hooks/hookRedux';
 import { handlerShowTrailer, updateUrlTrailer } from '../../../store/slises/trailerSlice';
-import Trailer from '../../Trailer/Trailer';
 import styles from './TrailerItem.module.scss';
 
 interface props {

@@ -7,7 +7,7 @@ const Trailer = () => {
   const url = useAppSelector((state) => state.trailer.url);
   const dispatch = useAppDispatch();
 
-  const handleClickOutside = (evt: MouseEvent) => {
+  const handleClickOutside = (evt) => {
     if (evt.target === evt.currentTarget) {
       dispatch(handlerShowTrailer(false));
     }

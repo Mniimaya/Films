@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './PosterFilm.module.scss';
 import Button from '../ui/Button/Button';
 import { ICountry, IGenre, IRootFilm } from '../../TYPES/TYPES';
