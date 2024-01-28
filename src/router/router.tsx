@@ -8,6 +8,7 @@ import LoginPage from '../pages/AuthPages/LoginPage/LoginPage';
 import CatalogPage from '../pages/CatalogPage/CatalogPage';
 import CollectionPage from '../pages/CollectionPage/CollectionPage';
 import ActorPage from '../pages/ActorPage/ActorPage';
+import CabinetPage from '../pages/CabinetPage/CabinetPage';
 
 export const Router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ export const Router = createBrowserRouter([
       {
         path: 'actor/:actorId',
         element: <ActorPage />,
+      },
+      {
+        path: 'cabinet',
+        element: <CabinetPage />,
       },
     ],
   },

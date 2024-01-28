@@ -21,9 +21,12 @@ const ActorPoster = ({ person }: T_PROPS) => {
             <p>
               Дата рождения: <span> {`${date}, ${person.age}`}</span>
             </p>
-            <p>
-              Место рождения: <span> {birthPlaceString}</span>
-            </p>
+            {birthPlaceString && (
+              <p>
+                Место рождения: <span> {birthPlaceString}</span>
+              </p>
+            )}
+
             <p>
               Всего фильмов: <span>{person.movies?.length}</span>
             </p>

@@ -2,7 +2,7 @@ import styles from './Button.module.scss';
 
 type T_PROPS = {
   children: React.ReactNode;
-  classAdd: string;
+  classAdd?: string;
   type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
   onClick?: Function;
 };

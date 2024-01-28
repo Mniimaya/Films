@@ -1,0 +1,32 @@
+@import '../../scss/variables.scss';
+
+.avatarWrapper {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 15px;
+  margin-bottom: 40px;
+}
+
+.name {
+  color: $color-white;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 5px;
+}
+
+.email {
+  color: #929090;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  max-width: 160px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  @include viewport--sm {
+    max-width: 300px;
+  }
+}

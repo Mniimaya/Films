@@ -88,6 +88,19 @@ main {
   height: 100%;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 #root {
   display: flex;
   flex-direction: column;
@@ -120,11 +133,11 @@ main {
 }
 
 .container-vertical {
-  padding-top: 25px;
+  padding-top: 20px;
   padding-bottom: 25px;
 
   @include viewport--lg {
-    padding-top: 50px;
+    padding-top: 45px;
     padding-bottom: 50px;
   }
 }

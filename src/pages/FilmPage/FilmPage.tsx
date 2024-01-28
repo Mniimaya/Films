@@ -33,9 +33,9 @@ const FilmPage = () => {
   return (
     <>
       {film && <PosterFilm {...film} />}
-      <div className={styles.container}>{!!film?.videos.trailers.length && <TrailerList data={film.videos.trailers} />}</div>
+      <div className={styles.container}>{!!film?.videos?.trailers.length && <TrailerList data={film.videos.trailers} />}</div>
       <div className={styles.container}>{film?.persons && <ActorsSlider persons={film?.persons} />}</div>
-      <div className={styles.container}>{film?.similarMovies.length && <SimilarMovies data={film.similarMovies} />}</div>
+      <div className={styles.container}>{!!film?.similarMovies.length && <SimilarMovies data={film.similarMovies} />}</div>
       {isOpenTrailer && <Trailer />}
     </>
   );

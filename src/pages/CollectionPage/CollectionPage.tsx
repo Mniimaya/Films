@@ -25,7 +25,7 @@ const CollectionPage = () => {
   }, [params]);
 
   return (
-    <div className="container">
+    <div className="container container-vertical">
       <div className={styles.titleContainer}>
         <PageTitle name={title} />
       </div>

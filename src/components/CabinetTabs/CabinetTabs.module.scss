@@ -1,0 +1,23 @@
+@import '../../scss/variables.scss';
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+.tabsButton {
+  background-color: transparent;
+  border: none;
+  color: $color-white;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 10px 16px;
+}
+
+.tabsButtonActive {
+  background-color: rgba(225, 60, 82, 1);
+  border-radius: 20px 20px 0 0;
+}

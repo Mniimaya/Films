@@ -58,6 +58,7 @@
     background-color: hsla(0, 8%, 28%, 0.43);
     border-radius: 20px;
     padding: 20px;
+    width: 800px;
   }
 }
 
@@ -69,6 +70,7 @@
     flex-direction: row;
     column-gap: 25px;
     align-items: flex-start;
+    align-items: stretch;
   }
 }
 
