@@ -1,7 +1,7 @@
 import styles from './PosterFilm.module.scss';
-import { T_COUNTRY, T_GENRE, T_ROOTFILM } from '../../TYPES/TYPES';
+import { T_COUNTRY, T_GENRE, T_ROOT_FILM } from '../../TYPES/TYPES';
 
-const PosterFilm = (props: T_ROOTFILM) => {
+const PosterFilm = (props: T_ROOT_FILM) => {
   const renderArray = (array: T_COUNTRY[] | T_GENRE[]) => {
     if (array.length > 0) {
       const filterArray = array.map((item) => item.name);

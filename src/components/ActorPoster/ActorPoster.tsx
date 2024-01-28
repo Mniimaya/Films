@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './ActorPoster.module.scss';
 import { T_PERSON } from '../../TYPES/TYPES';
 

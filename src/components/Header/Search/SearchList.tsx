@@ -1,11 +1,11 @@
-import { T_FILTER_MOVIE } from '../../../TYPES/TYPES';
+import { T_FILTERMOVIE } from '../../../TYPES/TYPES';
 import { useAppDispatch } from '../../../hooks/hookRedux';
 import { updateValue } from '../../../store/slises/searchSlice';
 import styles from './Search.module.scss';
 import SearchItem from './SearchItem';
 
 type T_PROPS = {
-  data: T_FILTER_MOVIE | null;
+  data: T_FILTERMOVIE | null;
 };
 
 const SearchList = ({ data }: T_PROPS) => {

@@ -1,4 +1,3 @@
-import React from 'react';
 import avatar from '../../assets/img/avatar.svg';
 import styles from './AvatarHandler.module.scss';
 
