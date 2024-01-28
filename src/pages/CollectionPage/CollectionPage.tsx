@@ -4,7 +4,7 @@ import CollectionList from '../../components/CollectionList/CollectionList';
 import { dataCollection } from '../../data/dataCollection';
 import { useParams } from 'react-router-dom';
 import { getFilms } from '../../API/FilmApi';
-import { IFilterMovie } from '../../TYPES/TYPES';
+import { T_FILTERMOVIE } from '../../TYPES/TYPES';
 import PageTitle from '../../components/ui/PageTitle/PageTitle';
 import ButtonSecondary from '../../components/ui/ButtonSecondary/ButtonSecondary';
 
@@ -16,7 +16,7 @@ const CollectionPage = () => {
   const params = useParams<I_PARAMS>();
   const nameCollection: string | undefined = dataCollection[params.collectionId as keyof typeof dataCollection].param;
   const title: string = dataCollection[params.collectionId as keyof typeof dataCollection].title;
-  const [collection, setCollection] = React.useState<IFilterMovie>();
+  const [collection, setCollection] = React.useState<T_FILTERMOVIE>();
   React.useEffect(() => {
     nameCollection &&
       getFilms(nameCollection, 24).then((data) => {

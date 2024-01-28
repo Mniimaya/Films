@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
-import { IRootFilm } from '../../../TYPES/TYPES';
+import { T_ROOT_FILM } from '../../../TYPES/TYPES';
 import styles from './Search.module.scss';
 import { ENUM_PAGE } from '../../../TYPES/TYPES';
 import imgFilm from '../../../assets/img/film-template.png';
-interface props {
-  data: IRootFilm;
-  onClick: Function;
-}
 
-const SearchItem = ({ data, onClick }: props) => {
+type T_PROPS = {
+  data: T_ROOT_FILM;
+  onClick: Function;
+};
+
+const SearchItem = ({ data, onClick }: T_PROPS) => {
   const getRatingClass = (rating: number) => {
     return rating > 6 ? 'rating-good' : 'rating-bad';
   };

@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit/react';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-export interface TrailerState {
+export type T_TRAILER_STATE = {
   isOpenTrailer: boolean;
   url: string;
-}
+};
 
-const initialState: TrailerState = {
+const initialState: T_TRAILER_STATE = {
   isOpenTrailer: false,
   url: '',
 };

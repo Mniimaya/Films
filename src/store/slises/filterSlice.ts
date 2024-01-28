@@ -1,16 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit/react";
-import type { PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit/react';
+import type { PayloadAction } from '@reduxjs/toolkit';
 
-export interface filterState {
+export type T_FILTER_STATE = {
   isOpen: boolean;
-}
+};
 
-const initialState: filterState = {
+const initialState: T_FILTER_STATE = {
   isOpen: false,
 };
 
 const filterSlice = createSlice({
-  name: "filter",
+  name: 'filter',
   initialState,
   reducers: {
     toggleShowFilter: (state, action: PayloadAction<boolean>) => {

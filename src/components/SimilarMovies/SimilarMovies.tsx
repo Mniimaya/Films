@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 import styles from './SimilarMovies.module.scss';
-import { ISimilarMovy } from '../../TYPES/TYPES';
+import { T_SIMILAR_MOVY } from '../../TYPES/TYPES';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import imgTemplate from '../../assets/img/film-template.png';
 import { Navigation } from 'swiper/modules';
 
-interface props {
-  data: ISimilarMovy[];
-}
+type T_PROPS = {
+  data: T_SIMILAR_MOVY[];
+};
 
-const SimilarMovies = ({ data }: props) => {
+const SimilarMovies = ({ data }: T_PROPS) => {
   return (
     <div className={`${styles.wrapper} container`}>
       <h2 className={styles.title}>Похожие картины</h2>

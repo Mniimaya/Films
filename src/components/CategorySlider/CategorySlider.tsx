@@ -4,16 +4,16 @@ import styles from './CategorySlider.module.scss';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
-import { IFilterMovie } from '../../TYPES/TYPES';
+import { T_FILTERMOVIE } from '../../TYPES/TYPES';
 import CardFilm from '../CardFilm/CardFilm';
 
-interface props {
-  data: IFilterMovie;
+type T_PROPS = {
+  data: T_FILTERMOVIE;
   title: string;
   collectionName: string;
-}
+};
 
-const CategorySlider = (props: props) => {
+const CategorySlider = (props: T_PROPS) => {
   const data = props.data.docs;
   const total = props.data.total;
 

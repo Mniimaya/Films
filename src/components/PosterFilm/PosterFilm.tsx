@@ -1,9 +1,8 @@
 import styles from './PosterFilm.module.scss';
-import Button from '../ui/Button/Button';
-import { ICountry, IGenre, IRootFilm } from '../../TYPES/TYPES';
+import { T_COUNTRY, T_GENRE, T_ROOTFILM } from '../../TYPES/TYPES';
 
-const PosterFilm = (props: IRootFilm) => {
-  const renderArray = (array: ICountry[] | IGenre[]) => {
+const PosterFilm = (props: T_ROOTFILM) => {
+  const renderArray = (array: T_COUNTRY[] | T_GENRE[]) => {
     if (array.length > 0) {
       const filterArray = array.map((item) => item.name);
       return filterArray.join(', ');

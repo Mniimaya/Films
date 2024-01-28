@@ -2,12 +2,12 @@ import { useAppDispatch, useAppSelector } from '../../../hooks/hookRedux';
 import { handlerShowTrailer, updateUrlTrailer } from '../../../store/slises/trailerSlice';
 import styles from './TrailerItem.module.scss';
 
-interface props {
+type T_PROPS = {
   url: string;
   name: string;
-}
+};
 
-const TrailerItem = ({ url, name }: props) => {
+const TrailerItem = ({ url, name }: T_PROPS) => {
   const isShowTrailer = useAppSelector((state) => state.trailer.isOpenTrailer);
   const dispatch = useAppDispatch();
 

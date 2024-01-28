@@ -1,15 +1,15 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-import { IPerson } from '../../TYPES/TYPES';
-import styles from './Actors.module.scss';
+import { T_PERSON } from '../../TYPES/TYPES';
+import styles from './ActorsSlider.module.scss';
 import actorImg from '../../assets/img/actor-template.png';
 import { Link } from 'react-router-dom';
 
-interface props {
-  persons: IPerson[];
-}
+type T_PROPS = {
+  persons: T_PERSON[];
+};
 
-const ActorsSlider = (props: props) => {
+const ActorsSlider = (props: T_PROPS) => {
   return (
     <div className={`container ${styles.container}`}>
       <h2 className={styles.title}>Актёры</h2>

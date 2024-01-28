@@ -1,12 +1,12 @@
-interface I_ITEM_DATA_CATALOG {
+type T_ITEM_DATA_CATALOG = {
   title: string;
-}
+};
 
-export interface I_DATA_CATALOG {
-  [films: string]: I_ITEM_DATA_CATALOG;
-  series: I_ITEM_DATA_CATALOG;
-  mult: I_ITEM_DATA_CATALOG;
-}
+export type T_DATA_CATALOG = {
+  [films: string]: T_ITEM_DATA_CATALOG;
+  series: T_ITEM_DATA_CATALOG;
+  mult: T_ITEM_DATA_CATALOG;
+};
 
 export const dataCatalog = {
   films: {

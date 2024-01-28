@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit/react';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-export interface HeaderState {
+export type T_HEADER_STATE = {
   isOpen: boolean;
-}
+};
 
-const initialState: HeaderState = {
+const initialState: T_HEADER_STATE = {
   isOpen: false,
 };
 

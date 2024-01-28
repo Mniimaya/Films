@@ -2,12 +2,12 @@ import React from 'react';
 import Intro from '../../components/Intro/Intro';
 import CategorySlider from '../../components/CategorySlider/CategorySlider';
 import { getFilms } from '../../API/FilmApi';
-import { IFilterMovie } from '../../TYPES/TYPES';
+import { T_FILTERMOVIE } from '../../TYPES/TYPES';
 import { dataCollection } from '../../data/dataCollection';
 
 const HomePage = () => {
-  const [top10, setTop10] = React.useState<IFilterMovie>();
-  const [tvSeries100, setTvSeries100] = React.useState<IFilterMovie>();
+  const [top10, setTop10] = React.useState<T_FILTERMOVIE>();
+  const [tvSeries100, setTvSeries100] = React.useState<T_FILTERMOVIE>();
 
   React.useEffect(() => {
     getFilms(dataCollection.top10.param).then((data) => {

@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import styles from './CardFilm.module.scss';
-import { IRootFilm } from '../../TYPES/TYPES';
+import { T_ROOT_FILM } from '../../TYPES/TYPES';
 import imgTemplate from '../../assets/img/film-template.png';
 
-interface I_PROPS {
-  item: IRootFilm;
-}
+type T_PROPS = {
+  item: T_ROOT_FILM;
+};
 
-const CardFilm = ({ item }: I_PROPS) => {
+const CardFilm = ({ item }: T_PROPS) => {
   const getRatingClass = (rating: number) => {
     return rating > 6 ? 'rating-good' : 'rating-bad';
   };

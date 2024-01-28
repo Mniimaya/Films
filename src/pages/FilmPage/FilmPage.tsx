@@ -3,7 +3,7 @@ import styles from './FilmPage.module.scss';
 import PosterFilm from '../../components/PosterFilm/PosterFilm';
 import { getFilmById } from '../../API/FilmApi';
 import { useParams } from 'react-router-dom';
-import { IRootFilm } from '../../TYPES/TYPES';
+import { T_ROOT_FILM } from '../../TYPES/TYPES';
 import ActorsSlider from '../../components/ActorsSlider/ActorsSlider';
 import SimilarMovies from '../../components/SimilarMovies/SimilarMovies';
 import TrailerList from '../../components/TrailerList/TrailerList';
@@ -16,7 +16,7 @@ type TYPE_PARAMS = {
 
 const FilmPage = () => {
   const params = useParams<TYPE_PARAMS>();
-  const [film, setFilm] = React.useState<IRootFilm>();
+  const [film, setFilm] = React.useState<T_ROOT_FILM>();
   const isOpenTrailer = useAppSelector((state) => state.trailer.isOpenTrailer);
 
   const requestsFilm = async () => {

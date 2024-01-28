@@ -1,9 +1,9 @@
 import styles from './CollectionList.module.scss';
-import { IRootFilm } from '../../TYPES/TYPES';
+import { T_ROOT_FILM } from '../../TYPES/TYPES';
 import CardFilm from '../CardFilm/CardFilm';
 
 type PROPS = {
-  collection: IRootFilm[];
+  collection: T_ROOT_FILM[];
 };
 
 const CollectionList = ({ collection }: PROPS) => {

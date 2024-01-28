@@ -1,12 +1,12 @@
 import Select from 'react-select';
-import { optionCusomSelect } from '../../../TYPES/TYPES';
+import { T_OPTION_CUSOM_SELECT } from '../../../TYPES/TYPES';
 
-interface props {
-  options: optionCusomSelect[];
+type T_PROPS = {
+  options: T_OPTION_CUSOM_SELECT[];
   title?: string;
-}
+};
 
-const SelectCustom = ({ options, title }: props) => {
+const SelectCustom = ({ options, title }: T_PROPS) => {
   return <Select options={options} classNamePrefix="SelectCustom" placeholder={title} isSearchable={false} />;
 };
 
