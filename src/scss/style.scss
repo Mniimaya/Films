@@ -119,6 +119,16 @@ main {
   }
 }
 
+.container-vertical {
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  @include viewport--lg {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
 * {
   padding: 0;
   margin: 0;

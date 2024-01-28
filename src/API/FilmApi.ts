@@ -39,3 +39,20 @@ export const searchData = async (query: string) => {
     console.log(error);
   }
 };
+
+export const getActor = async (id: string) => {
+  const selectFieldsArray: string[] = ['id', 'photo', 'name', 'birthday', 'age', 'profession', 'facts', 'movies', 'birthPlace'];
+  try {
+    const response = await axios({
+      url: 'https://api.kinopoisk.dev/v1.4/person',
+      method: 'GET',
+      params: { id, selectFields: selectFieldsArray },
+      paramsSerializer: {
+        indexes: null,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};

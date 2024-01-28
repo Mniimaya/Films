@@ -129,16 +129,6 @@ export type T_COUNTRY = {
   name: string;
 };
 
-export type T_PERSON = {
-  id: number;
-  photo: string;
-  name: string;
-  enName: string;
-  description: string;
-  profession: string;
-  enProfession: string;
-};
-
 export type T_REVIEW_INFO = {
   count: number;
   positiveCount: number;
@@ -295,6 +285,29 @@ export enum ENUM_BUTTON_TYPES {
 export type T_OPTION_CUSOM_SELECT = {
   value: string;
   label: string;
+};
+
+export type T_PERSON_SEARCH = {
+  docs: T_PERSON[];
+  limit: number;
+  page: number;
+  pages: number;
+  total: number;
+};
+
+export type T_PERSON = {
+  id: number;
+  photo: string;
+  name: string;
+  enName: string;
+  description: string;
+  profession?: T_PROFESSION[];
+  enProfession: string;
+  facts?: T_FACT[];
+  movies?: T_MOVIE[];
+  birthPlace?: T_BIRTHPLACE[];
+  age?: number;
+  birthday?: string;
 };
 
 export type T_PROFESSION = {

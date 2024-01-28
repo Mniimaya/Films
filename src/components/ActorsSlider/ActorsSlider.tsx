@@ -27,10 +27,10 @@ const ActorsSlider = (props: T_PROPS) => {
           {props.persons.map((pers, i) => {
             return (
               <SwiperSlide key={i} className={styles.slide}>
-                <Link to="/" className={styles.imgWrapper}>
+                <Link to={`/actor/${pers.id}`} className={styles.imgWrapper}>
                   <img src={pers.photo || actorImg} alt={pers.name}></img>
                 </Link>
-                <Link to="/" className={styles.name}>
+                <Link to={`/actor/${pers.id}`} className={styles.name}>
                   {pers.name}
                 </Link>
               </SwiperSlide>
