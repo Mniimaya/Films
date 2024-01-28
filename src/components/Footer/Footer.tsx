@@ -12,13 +12,13 @@ const Footer = () => {
             <LinkClient />
           </li>
           <li>
-            <Link to="films">Фильмы</Link>
+            <Link to="catalog/films">Фильмы</Link>
           </li>
           <li>
-            <Link to="films">Сериалы</Link>
+            <Link to="catalog/series">Сериалы</Link>
           </li>
           <li>
-            <Link to="films">Мультфильмы</Link>
+            <Link to="catalog/mult">Мультфильмы</Link>
           </li>
         </ul>
         <LogoFooter />

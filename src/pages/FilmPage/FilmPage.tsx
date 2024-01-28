@@ -4,7 +4,7 @@ import PosterFilm from '../../components/PosterFilm/PosterFilm';
 import { getFilmById } from '../../API/FilmApi';
 import { useParams } from 'react-router-dom';
 import { IRootFilm } from '../../TYPES/TYPES';
-import Actors from '../../components/Actors/Actors';
+import ActorsSlider from '../../components/ActorsSlider/ActorsSlider';
 import SimilarMovies from '../../components/SimilarMovies/SimilarMovies';
 import TrailerList from '../../components/TrailerList/TrailerList';
 import { useAppSelector } from '../../hooks/hookRedux';
@@ -34,7 +34,7 @@ const FilmPage = () => {
     <>
       {film && <PosterFilm {...film} />}
       <div className={styles.container}>{!!film?.videos.trailers.length && <TrailerList data={film.videos.trailers} />}</div>
-      <div className={styles.container}>{film?.persons && <Actors persons={film?.persons} />}</div>
+      <div className={styles.container}>{film?.persons && <ActorsSlider persons={film?.persons} />}</div>
       <div className={styles.container}>{film?.similarMovies.length && <SimilarMovies data={film.similarMovies} />}</div>
       {isOpenTrailer && <Trailer />}
     </>

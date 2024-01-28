@@ -27,12 +27,6 @@ const PosterFilm = (props: IRootFilm) => {
           {!!props.ageRating && <span className={styles.age}>{props.ageRating}+</span>}
         </p>
         <p className={styles.description}>{props.description}</p>
-
-        {!!props.videos.trailers.length && (
-          <Button classAdd={styles.buttonWatch} type="submit">
-            Смотреть трейлер
-          </Button>
-        )}
       </div>
     </div>
   );

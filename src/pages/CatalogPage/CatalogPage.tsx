@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import Filter from '../../components/Filter/Filter';
 import styles from './CatalogPage.module.scss';
 import { I_DATA_CATALOG, dataCatalog } from '../../data/dataCatalog';
+import PageTitle from '../../components/ui/PageTitle/PageTitle';
 
 type TYPE_PARAMS = {
   catalogId: string;
@@ -14,7 +15,7 @@ const CatalogPage = () => {
   return (
     <>
       <div className="container">
-        <h1 className={styles.title}>{dataCatalog.films.title}</h1>
+        <PageTitle name={dataCatalog.films.title} />
         <Filter />
         <ul>
           <li>

@@ -50,7 +50,7 @@ export interface IRootFilm {
 
 export interface IFilterMovie {
   docs: IRootFilm[];
-  total?: number;
+  total: number;
   limit?: number;
   page?: number;
   pages?: number;

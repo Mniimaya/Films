@@ -9,7 +9,7 @@ interface props {
   persons: IPerson[];
 }
 
-const Actors = (props: props) => {
+const ActorsSlider = (props: props) => {
   return (
     <div className={`container ${styles.container}`}>
       <h2 className={styles.title}>Актёры</h2>
@@ -44,4 +44,4 @@ const Actors = (props: props) => {
   );
 };
 
-export default Actors;
+export default ActorsSlider;

@@ -291,16 +291,3 @@ body.lock {
 .rating-bad {
   background-color: $color-red;
 }
-
-h1 {
-  color: $color-white;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 900;
-  line-height: 28px;
-
-  @include viewport--lg {
-    font-size: 48px;
-    line-height: 1;
-  }
-}

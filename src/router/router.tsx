@@ -6,6 +6,8 @@ import RegistrationPage from '../pages/AuthPages/RegistrationPage/RegistrationPa
 import AuthLayout from '../layouts/AuthLayout';
 import LoginPage from '../pages/AuthPages/LoginPage/LoginPage';
 import CatalogPage from '../pages/CatalogPage/CatalogPage';
+import CollectionPage from '../pages/CollectionPage/CollectionPage';
+import ActorPage from '../pages/ActorPage/ActorPage';
 
 export const Router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ export const Router = createBrowserRouter([
       {
         path: 'catalog/:catalogId',
         element: <CatalogPage />,
+      },
+      {
+        path: 'collection/:collectionId',
+        element: <CollectionPage />,
+      },
+      {
+        path: 'actor/:actorId',
+        element: <ActorPage />,
       },
     ],
   },

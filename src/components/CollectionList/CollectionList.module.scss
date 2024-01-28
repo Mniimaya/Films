@@ -1,0 +1,13 @@
+@import '../../scss/variables.scss';
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 13px;
+  row-gap: 25px;
+  justify-content: space-between;
+
+  @include viewport--sm {
+    column-gap: 30px;
+  }
+}
