@@ -1,10 +1,29 @@
 @import '../../scss/variables.scss';
 
+.container {
+  @include viewport--lg {
+    max-width: 1240px;
+    width: 100%;
+    padding: 50px 20px 80px;
+  }
+
+  @include viewport--lg {
+    max-width: 1400px;
+  }
+}
+
 .avatarWrapper {
   display: flex;
   align-items: flex-start;
   column-gap: 15px;
   margin-bottom: 40px;
+  padding: 20px 20px;
+  @include viewport--lg {
+    flex-direction: column;
+    row-gap: 15px;
+    align-items: center;
+    padding: 0;
+  }
 }
 
 .name {
@@ -28,5 +47,36 @@
 
   @include viewport--sm {
     max-width: 300px;
+  }
+}
+
+.mainWrapper {
+  @include viewport--lg {
+    display: flex;
+  }
+}
+
+.navbarContainer {
+  @include viewport--lg {
+    display: flex;
+    flex-direction: column;
+    padding-right: 50px;
+    border-right: 1px solid #616161;
+  }
+}
+
+.nameWrapper {
+  @include viewport--lg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.blocksWrapper {
+  background-color: rgba(0, 0, 0, 0.2);
+  @include viewport--lg {
+    padding-left: 100px;
+    background-color: transparent;
   }
 }

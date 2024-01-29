@@ -4,6 +4,21 @@
   align-items: center;
   justify-content: center;
   overflow: auto;
+  padding: 0 10px;
+
+  @include viewport--lg {
+    flex-direction: column;
+    overflow: visible;
+    row-gap: 20px;
+    padding: 0;
+  }
+
+  li {
+    flex-basis: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .tabsButton {
@@ -15,9 +30,37 @@
   font-weight: 500;
   line-height: normal;
   padding: 10px 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  justify-content: center;
+
+  svg {
+    display: none;
+  }
+
+  @include viewport--lg {
+    padding: 10px 35px;
+    color: #fff;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    min-width: 190px;
+    justify-content: flex-start;
+
+    svg {
+      display: block;
+    }
+  }
 }
 
 .tabsButtonActive {
   background-color: rgba(225, 60, 82, 1);
   border-radius: 20px 20px 0 0;
+
+  @include viewport--lg {
+    border-radius: 60px;
+  }
 }

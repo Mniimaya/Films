@@ -5,17 +5,22 @@ import PersonalBlock from '../../components/PersonalBlock/PersonalBlock';
 
 const CabinetPage = () => {
   return (
-    <div>
-      <div className={styles.avatarWrapper}>
-        <AvatarHandler />
-        <div>
-          <p className={styles.name}>Гость</p>
-          <p className={styles.email}>myemailaddress@gmail.com</p>
+    <div className={styles.container}>
+      <div className={styles.mainWrapper}>
+        <div className={styles.navbarContainer}>
+          <div className={styles.avatarWrapper}>
+            <AvatarHandler />
+            <div className={styles.nameWrapper}>
+              <p className={styles.name}>Гость</p>
+              <p className={styles.email}>myemailaddress@gmail.com</p>
+            </div>
+          </div>
+
+          <CabinetTabs />
         </div>
-      </div>
-      <CabinetTabs />
-      <div>
-        <PersonalBlock />
+        <div className={styles.blocksWrapper}>
+          <PersonalBlock />
+        </div>
       </div>
     </div>
   );
