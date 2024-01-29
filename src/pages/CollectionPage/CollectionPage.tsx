@@ -7,6 +7,8 @@ import { getFilms } from '../../API/FilmApi';
 import { T_ROOT_FILM } from '../../TYPES/TYPES';
 import PageTitle from '../../components/ui/PageTitle/PageTitle';
 import ButtonSecondary from '../../components/ui/ButtonSecondary/ButtonSecondary';
+import { useAppDispatch } from '../../hooks/hookRedux';
+import { updateIsLoading } from '../../store/slises/loadingSlice';
 
 type I_PARAMS = {
   collectionId: string;
@@ -22,12 +24,15 @@ const CollectionPage = () => {
   const lengthCollection = collection.length;
   const [index, setIndex] = React.useState(INITIAL_STATE_INDEX);
   const renderArray = collection.slice(0, index);
-  console.log(renderArray);
+  const dispatch = useAppDispatch();
 
   React.useEffect(() => {
+    dispatch(updateIsLoading(true));
     nameCollection &&
-      getFilms(nameCollection, 250).then((data) => {
+      getFilms(nameCollection, 250).then((response) => {
+        const data = response?.data;
         setCollection(data.docs);
+        dispatch(updateIsLoading(false));
       });
 
     return () => {
@@ -49,7 +54,9 @@ const CollectionPage = () => {
         <PageTitle name={title} />
       </div>
 
-      {!!collection.length && <div className={styles.listContainer}>{renderArray && <CollectionList collection={renderArray} />}</div>}
+      <div className={styles.listContainer}>
+        <CollectionList count={INITIAL_STATE_INDEX} collection={renderArray} />
+      </div>
       <div className={styles.buttonWrapper}>{lengthCollection !== index && <ButtonSecondary children="Показать еще" onClick={() => showMore()} />}</div>
     </div>
   );

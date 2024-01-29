@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.headers.common['X-API-KEY'] = '9D0FG1N-TFDMD98-H6PWA8T-0F2CZ09';
+axios.defaults.headers.common['X-API-KEY'] = 'G9E6V8E-0ZNM8MT-G0X1N07-87NNTF7';
 
 export const getFilms = async (lists: string, limit: number = 10, offset: number = 0, page: number = 1) => {
   try {
@@ -9,7 +9,7 @@ export const getFilms = async (lists: string, limit: number = 10, offset: number
       method: 'GET',
       params: { page, limit, offset, lists },
     });
-    return response.data;
+    return response;
   } catch (error) {
     console.log(error);
   }

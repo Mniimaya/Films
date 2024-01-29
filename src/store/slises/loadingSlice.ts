@@ -13,12 +13,12 @@ const loadingSlice = createSlice({
   name: 'loading',
   initialState,
   reducers: {
-    apdateIsLoading: (state, action: PayloadAction<boolean>) => {
+    updateIsLoading: (state, action: PayloadAction<boolean>) => {
       state.isLoading = action.payload;
     },
   },
 });
 
-export const { apdateIsLoading } = loadingSlice.actions;
+export const { updateIsLoading } = loadingSlice.actions;
 
 export default loadingSlice.reducer;

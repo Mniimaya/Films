@@ -6,6 +6,8 @@ import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import { T_FILTERMOVIE } from '../../TYPES/TYPES';
 import CardFilm from '../CardFilm/CardFilm';
+import CardLoader from '../CardLoader/CardLoader';
+import { useAppSelector } from '../../hooks/hookRedux';
 
 type T_PROPS = {
   data: T_FILTERMOVIE;
@@ -13,9 +15,12 @@ type T_PROPS = {
   collectionName: string;
 };
 
+const COUNT = 10;
+
 const CategorySlider = (props: T_PROPS) => {
   const data = props.data.docs;
   const total = props.data.total;
+  const isLoading = useAppSelector((state) => state.loading.isLoading);
 
   return (
     <section className={styles.sectionSlider}>
@@ -35,14 +40,15 @@ const CategorySlider = (props: T_PROPS) => {
         </div>
 
         <Swiper spaceBetween={30} slidesPerView="auto">
-          {!!data.length &&
-            data.map((item, i) => {
-              return (
-                <SwiperSlide className={styles.slide} key={i}>
-                  <CardFilm item={item} />
-                </SwiperSlide>
-              );
-            })}
+          {isLoading
+            ? [...new Array(COUNT)].map((item, i) => <CardLoader key={i} />)
+            : data.map((item, i) => {
+                return (
+                  <SwiperSlide className={styles.slide} key={i}>
+                    <CardFilm item={item} />
+                  </SwiperSlide>
+                );
+              })}
         </Swiper>
       </div>
     </section>

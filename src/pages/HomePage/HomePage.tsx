@@ -4,17 +4,27 @@ import CategorySlider from '../../components/CategorySlider/CategorySlider';
 import { getFilms } from '../../API/FilmApi';
 import { T_FILTERMOVIE } from '../../TYPES/TYPES';
 import { dataCollection } from '../../data/dataCollection';
+import { useAppDispatch } from '../../hooks/hookRedux';
+import { updateIsLoading } from '../../store/slises/loadingSlice';
 
 const HomePage = () => {
   const [top10, setTop10] = React.useState<T_FILTERMOVIE>();
   const [tvSeries100, setTvSeries100] = React.useState<T_FILTERMOVIE>();
+  const dispatch = useAppDispatch();
 
   React.useEffect(() => {
-    getFilms(dataCollection.top10.param).then((data) => {
-      setTop10(data);
-    });
-    getFilms(dataCollection.top100series.param).then((data) => {
-      setTvSeries100(data);
+    dispatch(updateIsLoading(true));
+    Promise.all([
+      getFilms(dataCollection.top10.param).then((response) => {
+        setTop10(response?.data);
+        return response;
+      }),
+      getFilms(dataCollection.top100series.param).then((response) => {
+        setTvSeries100(response?.data);
+        return response;
+      }),
+    ]).then(() => {
+      dispatch(updateIsLoading(false));
     });
   }, []);
 
