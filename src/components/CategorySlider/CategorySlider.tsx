@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
 import styles from './CategorySlider.module.scss';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
@@ -38,18 +39,30 @@ const CategorySlider = (props: T_PROPS) => {
             </Link>
           )}
         </div>
-
-        <Swiper spaceBetween={30} slidesPerView="auto">
-          {isLoading
-            ? [...new Array(COUNT)].map((item, i) => <CardLoader key={i} />)
-            : data.map((item, i) => {
-                return (
-                  <SwiperSlide className={styles.slide} key={i}>
-                    <CardFilm item={item} />
-                  </SwiperSlide>
-                );
-              })}
-        </Swiper>
+        <div className={styles.swiperContainer}>
+          <Swiper
+            spaceBetween={30}
+            slidesPerView="auto"
+            modules={[Navigation]}
+            navigation={{
+              nextEl: `.${styles.slide__buttonNext}`,
+              prevEl: `.${styles.slide__buttonPrev}`,
+              disabledClass: 'swiper-button-disabled',
+            }}
+          >
+            {isLoading
+              ? [...new Array(COUNT)].map((item, i) => <CardLoader key={i} />)
+              : data.map((item, i) => {
+                  return (
+                    <SwiperSlide className={styles.slide} key={i}>
+                      <CardFilm item={item} />
+                    </SwiperSlide>
+                  );
+                })}
+          </Swiper>
+          <button type="button" className={styles.slide__buttonNext}></button>
+          <button type="button" className={styles.slide__buttonPrev}></button>
+        </div>
       </div>
     </section>
   );

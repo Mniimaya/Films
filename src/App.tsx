@@ -9,13 +9,13 @@ function App() {
     window.scrollTo(0, 0);
   }, [location]);
   return (
-    <div>
+    <>
       <Header />
       <main className="main">
         <Outlet />
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
 

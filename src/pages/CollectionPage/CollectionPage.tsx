@@ -57,7 +57,7 @@ const CollectionPage = () => {
       <div className={styles.listContainer}>
         <CollectionList count={INITIAL_STATE_INDEX} collection={renderArray} />
       </div>
-      <div className={styles.buttonWrapper}>{lengthCollection !== index && <ButtonSecondary children="Показать еще" onClick={() => showMore()} />}</div>
+      <div className={styles.buttonWrapper}>{lengthCollection > index && <ButtonSecondary children="Показать еще" onClick={() => showMore()} />}</div>
     </div>
   );
 };
