@@ -2,6 +2,7 @@ import LinkClient from '../LinkClient/LinkClient';
 import styles from './Footer.module.scss';
 import { Link } from 'react-router-dom';
 import LogoFooter from './LogoFooter';
+import ButtonUp from '../ButtonUp/ButtonUp';
 
 const Footer = () => {
   return (
@@ -23,6 +24,7 @@ const Footer = () => {
         </ul>
         <LogoFooter />
       </div>
+      <ButtonUp />
     </footer>
   );
 };
