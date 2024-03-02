@@ -34,7 +34,8 @@ const filterSlice = createSlice({
       state.params = { ...action.payload };
     },
     clearParams: (state) => {
-      Object.fromEntries(Object.entries(state.params).map(([key, value]) => [key, (value = '')]));
+      console.log(state);
+      // Object.fromEntries(Object.entries(state.params).map(([key, value]) => [key, (value = '')]));
     },
   },
 });

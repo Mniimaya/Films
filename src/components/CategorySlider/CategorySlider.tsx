@@ -51,7 +51,7 @@ const CategorySlider = (props: T_PROPS) => {
             }}
           >
             {isLoading
-              ? [...new Array(COUNT)].map((item, i) => <CardLoader key={i} />)
+              ? [...new Array(COUNT)].map((_item, i) => <CardLoader key={i} />)
               : data.map((item, i) => {
                   return (
                     <SwiperSlide className={styles.slide} key={i}>

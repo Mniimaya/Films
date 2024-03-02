@@ -11,7 +11,7 @@ type PROPS = {
 
 const CollectionList = ({ collection, count }: PROPS) => {
   const isLoading = useAppSelector((state) => state.loading.isLoading);
-  return <ul className={styles.list}>{isLoading ? [...new Array(count)].map((item, i) => <CardLoader key={i} />) : collection.map((item) => <CardFilm item={item} />)}</ul>;
+  return <ul className={styles.list}>{isLoading ? [...new Array(count)].map((_item, i) => <CardLoader key={i} />) : collection.map((item) => <CardFilm item={item} />)}</ul>;
 };
 
 export default CollectionList;

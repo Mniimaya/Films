@@ -4,12 +4,12 @@ type T_PROPS = {
   children: React.ReactNode;
   classAdd?: string;
   type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
-  onClick: Function;
+  onClick?: React.MouseEventHandler;
 };
 
 const Button = ({ children, classAdd, type = 'button', onClick }: T_PROPS) => {
   return (
-    <button className={`${styles.btn} ${classAdd}`} type={type} onClick={() => onClick()}>
+    <button className={`${styles.btn} ${classAdd}`} type={type} onClick={onClick}>
       {children}
     </button>
   );

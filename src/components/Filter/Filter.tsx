@@ -3,19 +3,19 @@ import SelectCustom from '../ui/SelectCustom/SelectCustom';
 import { useAppDispatch, useAppSelector } from '../../hooks/hookRedux';
 import { toggleShowFilter } from '../../store/slises/filterSlice';
 import { optionsGenre } from '../../data/dataGenre';
-import { optionsCountry } from '../../data/dataCountry';
-import { optionsYears } from '../../data/dataYears';
-import { optionsRating } from '../../data/dataRating';
+// import { optionsCountry } from '../../data/dataCountry';
+// import { optionsYears } from '../../data/dataYears';
+// import { optionsRating } from '../../data/dataRating';
 import Button from '../ui/Button/Button';
 import { IoFilter } from 'react-icons/io5';
 import { ActionMeta, SingleValue } from 'react-select';
 import { T_OPTION_CUSOM_SELECT } from '../../TYPES/TYPES';
 import { getFilmsCatalog } from '../../API/FilmApi';
-import { dataCatalog } from '../../data/dataCatalog';
+// import { dataCatalog } from '../../data/dataCatalog';
 
 const Filter = () => {
   const isOpenFilter = useAppSelector((state) => state.filter.isOpen);
-  const paramsFilter = useAppSelector((state) => state.filter.params);
+  // const paramsFilter = useAppSelector((state) => state.filter.params);
   const dispatch = useAppDispatch();
   const toggleFilter = () => {
     dispatch(toggleShowFilter(!isOpenFilter));
