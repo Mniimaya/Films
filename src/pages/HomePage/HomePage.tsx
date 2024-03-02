@@ -1,7 +1,7 @@
 import React from 'react';
 import Intro from '../../components/Intro/Intro';
 import CategorySlider from '../../components/CategorySlider/CategorySlider';
-import { getFilms } from '../../API/FilmApi';
+import { getFilmsCollection } from '../../API/FilmApi';
 import { T_FILTERMOVIE } from '../../TYPES/TYPES';
 import { dataCollection } from '../../data/dataCollection';
 import { useAppDispatch } from '../../hooks/hookRedux';
@@ -15,11 +15,11 @@ const HomePage = () => {
   React.useEffect(() => {
     dispatch(updateIsLoading(true));
     Promise.all([
-      getFilms(dataCollection.top10.param).then((response) => {
+      getFilmsCollection(dataCollection.top10.param).then((response) => {
         setTop10(response?.data);
         return response;
       }),
-      getFilms(dataCollection.top100series.param).then((response) => {
+      getFilmsCollection(dataCollection.top100series.param).then((response) => {
         setTvSeries100(response?.data);
         return response;
       }),

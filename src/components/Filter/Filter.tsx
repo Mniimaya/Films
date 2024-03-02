@@ -8,12 +8,29 @@ import { optionsYears } from '../../data/dataYears';
 import { optionsRating } from '../../data/dataRating';
 import Button from '../ui/Button/Button';
 import { IoFilter } from 'react-icons/io5';
+import { ActionMeta, SingleValue } from 'react-select';
+import { T_OPTION_CUSOM_SELECT } from '../../TYPES/TYPES';
+import { getFilmsCatalog } from '../../API/FilmApi';
+import { dataCatalog } from '../../data/dataCatalog';
 
 const Filter = () => {
   const isOpenFilter = useAppSelector((state) => state.filter.isOpen);
+  const paramsFilter = useAppSelector((state) => state.filter.params);
   const dispatch = useAppDispatch();
   const toggleFilter = () => {
     dispatch(toggleShowFilter(!isOpenFilter));
+  };
+
+  const updateParams = (newValue: SingleValue<T_OPTION_CUSOM_SELECT>, actionMeta: ActionMeta<T_OPTION_CUSOM_SELECT>) => {
+    console.log(newValue, actionMeta);
+    const value = newValue?.label;
+
+    value &&
+      getFilmsCatalog(value).then((data) => {
+        console.log(data);
+      });
+    // data[actionMeta.name] = newValue.label;
+    // dispatch(updateParams())
   };
 
   return (
@@ -29,10 +46,10 @@ const Filter = () => {
         </div>
 
         <div className={styles.filterContainer}>
-          <SelectCustom title="Жанр" options={optionsGenre} />
-          <SelectCustom title="Страны" options={optionsCountry} />
+          <SelectCustom name="genres" title="Жанр" options={optionsGenre} onChange={updateParams} />
+          {/* <SelectCustom title="Страны" options={optionsCountry} />
           <SelectCustom title="Годы" options={optionsYears} />
-          <SelectCustom title="Рейтинг" options={optionsRating} />
+          <SelectCustom title="Рейтинг" options={optionsRating} /> */}
         </div>
         <button type="button" className={styles.resetButton}>
           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">

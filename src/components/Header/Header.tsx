@@ -20,20 +20,26 @@ function Header() {
   return (
     <header className={`${styles.header} ${isOpen && styles.headerDark} ${path !== '/' && styles.headerOpacity}`}>
       <div className={`container ${styles.container}`}>
-        <Link to="/" className={styles.logoLink}>
+        <Link onClick={handlerMobileMenu} to="/" className={styles.logoLink}>
           <Logo></Logo>
         </Link>
         <div className={`${styles.navContainer} ${isOpen ? styles.active : ''}`}>
           <nav className={`${styles.nav} navigation`}>
             <ul>
               <li>
-                <Link to="catalog/films">Фильмы</Link>
+                <Link onClick={handlerMobileMenu} to="catalog/films">
+                  Фильмы
+                </Link>
               </li>
               <li>
-                <Link to="catalog/series">Сериалы</Link>
+                <Link onClick={handlerMobileMenu} to="catalog/series">
+                  Сериалы
+                </Link>
               </li>
               <li>
-                <Link to="catalog/mult">Мультфильмы</Link>
+                <Link onClick={handlerMobileMenu} to="catalog/mult">
+                  Мультфильмы
+                </Link>
               </li>
             </ul>
           </nav>

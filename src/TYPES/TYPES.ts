@@ -331,3 +331,10 @@ export type T_MOVIE = {
   description?: string;
   enProfession: string;
 };
+
+export type T_PARAMS_FILTER = {
+  genres: string;
+  countries: string;
+  year: string;
+  rating: string;
+};

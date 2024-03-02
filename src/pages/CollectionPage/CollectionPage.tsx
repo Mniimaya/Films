@@ -3,7 +3,7 @@ import styles from './CollectionPage.module.scss';
 import CollectionList from '../../components/CollectionList/CollectionList';
 import { dataCollection } from '../../data/dataCollection';
 import { useParams } from 'react-router-dom';
-import { getFilms } from '../../API/FilmApi';
+import { getFilmsCollection } from '../../API/FilmApi';
 import { T_ROOT_FILM } from '../../TYPES/TYPES';
 import PageTitle from '../../components/ui/PageTitle/PageTitle';
 import ButtonSecondary from '../../components/ui/ButtonSecondary/ButtonSecondary';
@@ -29,7 +29,7 @@ const CollectionPage = () => {
   React.useEffect(() => {
     dispatch(updateIsLoading(true));
     nameCollection &&
-      getFilms(nameCollection, 250).then((response) => {
+      getFilmsCollection(nameCollection, 250).then((response) => {
         const data = response?.data;
         setCollection(data.docs);
         dispatch(updateIsLoading(false));

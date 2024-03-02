@@ -1,12 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit/react';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
+type T_PARAMS = {
+  genres: string;
+  countries: string;
+  year: string;
+  rating: string;
+};
+
 export type T_FILTER_STATE = {
   isOpen: boolean;
+  params: T_PARAMS;
 };
 
 const initialState: T_FILTER_STATE = {
   isOpen: false,
+  params: {
+    genres: '',
+    countries: '',
+    year: '',
+    rating: '',
+  },
 };
 
 const filterSlice = createSlice({
@@ -15,6 +29,12 @@ const filterSlice = createSlice({
   reducers: {
     toggleShowFilter: (state, action: PayloadAction<boolean>) => {
       state.isOpen = action.payload;
+    },
+    updateParams: (state, action: PayloadAction<T_PARAMS>) => {
+      state.params = { ...action.payload };
+    },
+    clearParams: (state) => {
+      Object.fromEntries(Object.entries(state.params).map(([key, value]) => [key, (value = '')]));
     },
   },
 });

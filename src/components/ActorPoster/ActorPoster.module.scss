@@ -43,6 +43,26 @@
       color: $color-white;
       font-weight: 400;
     }
+
+    .descTitle {
+      flex-basis: 135px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #797979;
+    }
+  }
+
+  @include viewport--sm {
+    .descTitle {
+      white-space: nowrap;
+    }
+
+    p {
+      column-gap: 10px;
+    }
   }
 
   @include viewport--md {
